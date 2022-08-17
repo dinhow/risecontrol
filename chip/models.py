@@ -1,7 +1,7 @@
 from uuid import uuid4
 from django.db import models
 
-class Chip(models.Model):
+class Chips(models.Model):
     chip_id = models.UUIDField(default=uuid4, primary_key=True, editable=False)
     chip_iccid = models.CharField(max_length=22, unique=True, default='')
     chip_company = models.CharField(max_length=20, default='')
