@@ -19,7 +19,6 @@ from django.urls import path, include
 from rest_framework import routers
 from user import views
 from user.api import viewsets as userviewsets
-#from budgets.api import viewsets as budgetsviewsets
 from chip.api import viewsets as chipviewsets
 
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
@@ -27,14 +26,12 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 route = routers.DefaultRouter()
 
 route.register(r'user', userviewsets.UserViewSet, basename="User")
-# route.register(r'budgets', budgetsviewsets.BudgetsViewSet, basename="Budgets")
-# route.register(r'schedules', budgetviewsets.BudgetsViewSet, basename="Schedules")
 route.register(r'chip', chipviewsets.ChipViewSet, basename="Chip")
+route.register(r'disabledchip', chipviewsets.ChipViewSet, basename="DisabledChip")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('token/', TokenObtainPairView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
-    #path('account/register', views.UserCreate.as_view()),
     path('', include(route.urls)),
 ]
