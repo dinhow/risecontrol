@@ -1,8 +1,8 @@
 from dataclasses import fields
 from rest_framework import serializers
-from chip import models
+from disabledchip import models
 
-class ChipSerializer(serializers.ModelSerializer):
+class DisabledChipSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Chip
+        model = models.DisabledChip
         fields = '__all__'
