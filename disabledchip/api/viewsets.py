@@ -5,5 +5,5 @@ from rest_framework.permissions import IsAuthenticated
 
 class DisabledChipViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated, )
-    serializer_class = serializers.ChipSerializer
+    serializer_class = serializers.DisabledChipSerializer
     queryset = models.DisabledChip.objects.all()

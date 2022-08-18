@@ -28,7 +28,7 @@ route = routers.DefaultRouter()
 
 route.register(r'user', userviewsets.UserViewSet, basename="User")
 route.register(r'chip', chipviewsets.ChipViewSet, basename="Chip")
-route.register(r'disabledchip', disabledchipviewsets.ChipViewSet, basename="DisabledChip")
+route.register(r'disabledchip', disabledchipviewsets.DisabledChipViewSet, basename="DisabledChip")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
