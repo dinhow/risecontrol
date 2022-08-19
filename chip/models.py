@@ -10,7 +10,7 @@ class Chip(models.Model):
     add_at = models.DateTimeField(auto_now_add=True)
     linked_at = models.DateTimeField(auto_now=True)
     linked_by = models.CharField(max_length=50, default='')
-    linked_in = models.CharField(max_length=50, default='', unique=True)
+    linked_in = models.CharField(max_length=50, default='')
     cancelled_by = models.CharField(max_length=50, default='')
     cancelled_at = models.DateTimeField(auto_now=True)
     chip_with = models.CharField(max_length=50, default='')
