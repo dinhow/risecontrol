@@ -4,6 +4,6 @@ from chiptoconvert.api import serializers
 from rest_framework.permissions import IsAuthenticated
 
 class ChipToConvertViewSet(viewsets.ModelViewSet):
-    #permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated, )
     serializer_class = serializers.ChipToConvertSerializer
     queryset = models.ChipToConvert.objects.all()
