@@ -21,6 +21,7 @@ from user import views
 from user.api import viewsets as userviewsets
 from chip.api import viewsets as chipviewsets
 from disabledchip.api import viewsets as disabledchipviewsets
+from chiptoconvert.api import viewsets as chiptoconvertviewsets
 
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
@@ -29,6 +30,7 @@ route = routers.DefaultRouter()
 route.register(r'user', userviewsets.UserViewSet, basename="User")
 route.register(r'chip', chipviewsets.ChipViewSet, basename="Chip")
 route.register(r'disabledchip', disabledchipviewsets.DisabledChipViewSet, basename="DisabledChip")
+route.register(r'chiptoconvert', chiptoconvertviewsets.ChipToConvertViewSet, basename="ChipToConvert")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
