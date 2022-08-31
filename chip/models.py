@@ -3,7 +3,7 @@ from django.db import models
 
 class Chip(models.Model):
     chip_id = models.UUIDField(default=uuid4, primary_key=True, editable=False)
-    chip_iccid = models.CharField(max_length=22, default='')
+    chip_iccid = models.CharField(max_length=50, default='')
     chip_line_number = models.CharField(max_length=15, default='', blank=True)
     chip_plan = models.CharField(max_length=15, default='', blank=True)
     chip_company = models.CharField(max_length=20, default='', blank=True)
@@ -16,7 +16,7 @@ class Chip(models.Model):
     #linked_in = models.CharField(max_length=50, default='', blank=True)
     cancelled_by = models.CharField(max_length=50, default='', blank=True)
     cancelled_at = models.CharField(max_length=50,default='',blank=True)
-    chip_with = models.CharField(max_length=50, default='', blank=True)
+    chip_with = models.CharField(max_length=200, default='', blank=True)
     chip_with_at = models.CharField(max_length=50, default='',blank=True)
     cr_gps = models.CharField(max_length=15, default='', blank=True)
     cod_cliente = models.CharField(max_length=15, default='', blank=True)
