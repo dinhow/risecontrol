@@ -3,7 +3,7 @@ from django.db import models
 
 class Chip(models.Model):
     chip_id = models.UUIDField(default=uuid4, primary_key=True, editable=False)
-    chip_iccid = models.CharField(max_length=50, default='')
+    chip_iccid = models.CharField(max_length=200, default='')
     chip_line_number = models.CharField(max_length=15, default='', blank=True)
     chip_plan = models.CharField(max_length=15, default='', blank=True)
     chip_company = models.CharField(max_length=20, default='', blank=True)
@@ -19,6 +19,6 @@ class Chip(models.Model):
     chip_with = models.CharField(max_length=200, default='', blank=True)
     chip_with_at = models.CharField(max_length=50, default='',blank=True)
     cr_gps = models.CharField(max_length=15, default='', blank=True)
-    cod_cliente = models.CharField(max_length=15, default='', blank=True)
+    cod_cliente = models.CharField(max_length=50, default='', blank=True)
     amount_nf = models.DecimalField(max_digits=15, default=0, blank=True, decimal_places=2)
     amount_charged = models.DecimalField(max_digits=15, default=0, blank=True, decimal_places=2)
