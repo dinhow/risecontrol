@@ -9,7 +9,7 @@ class Chip(models.Model):
     chip_company = models.CharField(max_length=50, default='', blank=True, null=True)
     chip_apn = models.CharField(max_length=50, default='', blank=True, null=True)
     chip_status = models.IntegerField(default=1)
-    add_at = models.DateTimeField(auto_now_add=True, blank=True)
+    add_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     add_by = models.CharField(max_length=50, default='', blank=True)
     linked_at = models.CharField(max_length=50,default='',blank=True, null=True)
     linked_by = models.CharField(max_length=50, default='', blank=True, null=True)
