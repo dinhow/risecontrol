@@ -1,4 +1,6 @@
+from datetime import datetime
 from uuid import uuid4
+from xmlrpc.client import DateTime
 from django.db import models
 
 class Chip(models.Model):
@@ -9,7 +11,7 @@ class Chip(models.Model):
     chip_company = models.CharField(max_length=50, default='', blank=True, null=True)
     chip_apn = models.CharField(max_length=50, default='', blank=True, null=True)
     chip_status = models.IntegerField(default=1)
-    add_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    add_at = models.DateTimeField(default=datetime.now)
     add_by = models.CharField(max_length=50, default='', blank=True)
     linked_at = models.CharField(max_length=50,default='',blank=True, null=True)
     linked_by = models.CharField(max_length=50, default='', blank=True, null=True)
